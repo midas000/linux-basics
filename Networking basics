@@ -1,0 +1,37 @@
+* VALIDATING * 
+obs: do not use "ifconfig" utility - outdated.
+
+1) Net. Address:
+$ ip addr show $ip a s
+$ ip link show 
+^ with statistics - $ ip -s link show
+^ turn link on/off, up/down - $ ip link set dev <devicename> 
+
+2) Route:
+$ ip route
+
+3) Ports and Services:
+$ netstat
+or
+^ see all listening ports - $ ss -lt
+^ see list of all UDP and TCP ports - $ ss -tul
+-> test internet connection - $ ping -c 4 8.8.8.8
+
+* CONFIGURING *
+
+On RHEL 8 networking is managed by the "NetworkManager"
+$ systemctl status NetworkManager
+-> network card configuration (connection) scripts - /etc/sysconfig/network-scripts
+$ nmcli 
+$ nmcli gen permissions
+-> Descriptoon of settings/properties of NetworkManager - $ man 5 nm-settings
+-> Examples how to use "nmcli" - $ man nmcli-examples
+$ nmtui
+-> after modifying any conf. - $ nmcli con up
+
+* HOSTNAME * and Name Resolution
+
+$ hostnamectl set-hostname myhost.example.com
+$ hostnamectl status 
+-> hostname resolution file - /etc/hosts
+-> file used for DNS name server resolving, do NOT change directly, it will be overwritten when system reboots - /etc/resolv.conf
