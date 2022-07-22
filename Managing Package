@@ -1,0 +1,19 @@
+* YUM *
+
+$ yum $ yum module 
+
+search - search for the exact name of a package
+provides - look for specific files within the available packages
+info - provide more information about the package
+install - dont need to write about this one
+remove - same here
+list [all | installed] - list all or installed packages
+group list - list package groups
+group install - install all packages from a group
+update - update packages specified
+clean all - remove all stored metadata
+history - diplay history of yum usage
+history undo <number> - undo the associated activity 
+
+> To ensure that all dependent packages are updated as well - $ yum distro-sync.
+
