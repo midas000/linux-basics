@@ -1,4 +1,4 @@
-* YUM *
+* YUM * .rpm based distros
 
 $ yum $ yum module 
 
@@ -15,5 +15,9 @@ clean all - remove all stored metadata
 history - diplay history of yum usage
 history undo <number> - undo the associated activity 
 
-> To ensure that all dependent packages are updated as well - $ yum distro-sync.
+> To ensure that all dependent packages are updated as well - $ yum distro-sync
 
+* Repositories *
+
+$ yum repolist
+$ createrepo
