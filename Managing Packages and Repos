@@ -1,6 +1,7 @@
-* YUM * .rpm based distros
+.rpm based distros
 
-$ yum $ yum module 
+* YUM * 
+$ yum <options>
 
 search - search for the exact name of a package
 provides - look for specific files within the available packages
@@ -8,16 +9,37 @@ info - provide more information about the package
 install - dont need to write about this one
 remove - same here
 list [all | installed] - list all or installed packages
-group list - list package groups
+group [list, info, etc)
 group install - install all packages from a group
 update - update packages specified
 clean all - remove all stored metadata
 history - diplay history of yum usage
 history undo <number> - undo the associated activity 
 
-> To ensure that all dependent packages are updated as well - $ yum distro-sync
+> Manage Module Streams:
 
-* Repositories *
+$ yum module info <packagename>:<version>/<profile>
+$ yum module reset <modulename>
+$ yum module install <packagename>:<version>/<profile> --allowerasing
+$ yum module enable <packagename>:<version>
 
-$ yum repolist
-$ createrepo
+$ yum distro-sync
+^ ensure all dependent packages are updated
+
+To ensure that all dependent packages are updated as well > $ yum distro-sync
+
+* RPM - Querying - Managing Software Package *
+$ rpm <options>
+
+qd - query docs files
+qc - query configuration fiels
+q --scripts - query if there is
+
+$ repoquery <options looks similar to rpm command>
+
+obs: install "yum-utils" to use $ yumdownloader
+^ downloads a package without installing 
+
+
+
+
