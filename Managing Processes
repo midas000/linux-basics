@@ -7,3 +7,10 @@ Ctrl+C - cancel the current job
 gb - continues the job that has been frozen using Ctrl+Z in the background
 fg - brings back to the foreground the last that was moved to cackground execution
 jobs - shows wich jobs are currently running from this shell, and job numbers
+
+* Parent-Child relations *
+ 
+ The shell used to start a job becomes the father/responsible for that process, for 
+ that reason all process started from a shell are terminated when that shell is stoped.
+ Processes started in the background will not be kileed when the parent shell from
+ which they were started is killed.
