@@ -1,14 +1,19 @@
+$ps $nice $renice $top $kill
+
 * Job Managemant Overview *
 
 & - starts command in the background
 Ctrl+Z - stops jobs temporarily
-Ctrl+D - indicate that it should stop waiting dfor further input
+Ctrl+D - indicate that it should stop waiting for further input
 Ctrl+C - cancel the current job
 gb - continues the job that has been frozen using Ctrl+Z in the background
 fg - brings back to the foreground the last that was moved to cackground execution
 jobs - shows wich jobs are currently running from this shell, and job numbers
 
 * Parent-Child relations *
+
+"In RHEL8, if you kill a parent process, all of its child processes become children
+of the systemd process"
  
 * Commands to get inforamation *
 
@@ -24,5 +29,35 @@ $ renice - change priority for a currently active process
 
 obs. values ranging from -20 to 19
 ex: $ renice -n 10 -<PID>
+
+* Signals * 
+
+- SIGTERM (15) - used to ask a process to stop
+- SIGKILL (9) - used to force a process to stop
+- SIGHUP (1) - process will reread its configuration files
+
+* TOP *
+> overview of the most active process currently runnig
+> used to manage processes
+> load average parameter or use $uptime
+
+type "k" to prompt
+type "r" to renice
+
+* Signals with KILL *
+
+$ kill <PID> - sends SIGTERM signal to the process
+$ kill -9 <PID> - sends SIGKILL singal to the process
+$ Kill -l - lis of available signals that can be used with kill
+$ pkill <"name of the process"> 
+$ killall - terminate lots of process that with the same name
+
+
+
+
+
+
+
+
 
 
