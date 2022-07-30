@@ -52,6 +52,16 @@ $ Kill -l - lis of available signals that can be used with kill
 $ pkill <"name of the process"> 
 $ killall - terminate lots of process that with the same name
 
+* Optimize Performance with TUNED *
+
+$ yum install tuned -y
+> before you can use it run $ systemctl enable --now tuned
+$ tuned-adm active - find out wich tuned profile is running
+$ tuned-adm recommend - see which tuned profile is recommended
+$ tuned-adm list - overview of profile available on your server
+$ tuned-adm profile <profile-name> - select another profile
+
+
 
 
 
