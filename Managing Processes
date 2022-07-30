@@ -6,7 +6,7 @@ $ps $nice $renice $top $kill
 Ctrl+Z - stops jobs temporarily
 Ctrl+D - indicate that it should stop waiting for further input
 Ctrl+C - cancel the current job
-gb - continues the job that has been frozen using Ctrl+Z in the background
+bg - continues the job that has been frozen using Ctrl+Z in the background
 fg - brings back to the foreground the last that was moved to cackground execution
 jobs - shows wich jobs are currently running from this shell, and job numbers
 
@@ -46,10 +46,11 @@ type "r" to renice
 
 * Signals with KILL *
 
+& man 7 signal
 $ kill <PID> - sends SIGTERM signal to the process
 $ kill -9 <PID> - sends SIGKILL singal to the process
 $ Kill -l - lis of available signals that can be used with kill
-$ pkill <"name of the process"> 
+$ pkill <name-of-the-process> $ pkill <mycommand>
 $ killall - terminate lots of process that with the same name
 
 * Optimize Performance with TUNED *
