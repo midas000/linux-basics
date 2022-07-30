@@ -10,7 +10,19 @@ jobs - shows wich jobs are currently running from this shell, and job numbers
 
 * Parent-Child relations *
  
- The shell used to start a job becomes the father/responsible for that process, for 
- that reason all process started from a shell are terminated when that shell is stoped.
- Processes started in the background will not be kileed when the parent shell from
- which they were started is killed.
+* Commands to get inforamation *
+
+$ ps - show process started by user
+$ ps aux - short sumary of process
+$ ps fax - shows hierarchical relationships between parent and child processes
+$ ps -ef - shows name and command used to start de process
+
+* Adjust priority with NICE *
+
+$ nice - start a process with adjusted priority
+$ renice - change priority for a currently active process
+
+obs. values ranging from -20 to 19
+ex: $ renice -n 10 -<PID>
+
+
