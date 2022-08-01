@@ -1,5 +1,6 @@
 
 $ systemctl -t help :display list of available units.
+$ man 5 systemd.service
 
 * Systemd Unit files *
 /usr/lib/systemd/system :default unit files that have been installed from RPM packages. don't touch these files. 3° precedence
