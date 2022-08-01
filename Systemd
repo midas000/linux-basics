@@ -6,6 +6,7 @@ $ systemctl start
 $ systemctl enable
 $ systemctl show <unit-name> :shows all systemd options that can be configured in the <unit-name>
 $ systemctl edit <unit-name> :change unit files. creates a subdirectory in "/etc/systemd/system" for the service you are editing
+$ systemctl cat httpd.service :show current configuration of the unit file that starts the Apache web server. "httpd.service" was an example.
 
 * UNIT overview commands *
    
