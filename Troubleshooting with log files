@@ -1,0 +1,7 @@
+
+Two services handle "syslog" messages:
+1) "systemd-journal" daemon :collects messages from various sources
+2) "Rsyslog" service :sorts messages by type and priority
+^
+/var/log :stores the log messages
+
