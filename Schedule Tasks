@@ -1,0 +1,34 @@
+CRON service
+
+man 5 crontab 
+
+$ systemctl status crond -l :monitor current status of the cron service.
+$ crontab -e :create user specific files as user
+$ crontab -e -u <username> :create user specific file as root
+
+
+* Configuration files *
+
+/etc/crontab :main configuration file. convenient overview but this file can't be modified.
+/var/spool/cron :user cron files created with $crontab -e. don't touch these!
+/etc/anacrontab :used to specify how anacron jobs should be executed
+
+/etc/cron.d :cron files executed as root
+/etc/cron.hourly, cron.weekly, and cron.monthly :scripts
+
+/etc/cron.allow 
+/etc/cron.deny
+^^ if any of these files exists they will be considered. you can't put the same user at both.
+   both if these files should not exist on the same system at the same time.
+   only root can use cron if neither file exists.
+   
+ATD service
+
+$ at <time> :opens a shell that you can type several commands that will be executed at the specific time.
+^ CTRL+D :quit.
+$ atq :overview of all jobs currently scheduled.
+$ atrm <command> :remove current at jobs.
+$ atd -l <3.0> :parameter of performance, system load "3.0". job is started only when system perfomance parameter allows
+
+
+
