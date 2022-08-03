@@ -4,4 +4,10 @@ Two services handle "syslog" messages:
 2) "Rsyslog" service :sorts messages by type and priority
 ^
 /var/log :stores the log messages
+/var/log/messages :all syslog messages except the following
+/var/log/secure :security and authentication-related messages and errors
+/var/log/maillog :mail server-related messages and errors
+/var/log/cron :log files related to periodically executed tasks
+/var/log/boot.log :log files related to system startup
+
 
